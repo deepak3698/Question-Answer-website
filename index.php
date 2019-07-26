@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Question Answer Website</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,30 +57,14 @@
         <div class="col-lg-8">
 
           <!-- Title -->
-          <h1 class="mt-4">Post Title</h1>
-
-          <!-- Author -->
-          <p class="lead">
-            by
-            <a href="#">Start Bootstrap</a>
-          </p>
-
-          <hr>
-
-          <!-- Date/Time -->
-          <p>Posted on January 1, 2018 at 12:00 PM</p>
-
-          <hr>
-
-          <!-- Preview Image -->
-          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
-
-          <hr>
+       
 
   <h1>
 your question is here:--Go to Bottom Of the page For The Solution of your Question.
 
 </h1>  
+
+<hr>
 
 
 <?php
@@ -104,10 +88,12 @@ if(mysqli_num_rows($result)>0)
 	while($row=mysqli_fetch_assoc($result))
 	{
 		$res=$res.'<div class="lead">';
-		
-		$res=$res.$i;
+		$res=$res.'<i>';
+		$res=$res."Question No ".$i;
 		$res=$res.'<h>:-</h>';
 		$res=$res.$row['msgs'];
+		$res=$res.'</i>';	
+		
 		$res=$res.'</div>';
 		$res=$res.'<br>';
 		$i=$i+1;
@@ -118,6 +104,8 @@ echo $res;
 
 
 ?>
+<hr>
+
 
 <?php
 $pagesql="select * from msg";
@@ -136,7 +124,7 @@ for($b=1;$b<=$a;$b++)
 		
 		?>
 		
-		<a href="index.php?page=<?php echo $b ?> "> <?php echo $b; ?> </a>
+	<a href="index.php?page=<?php echo $b ?> "> <?php echo "Page ".$b; ?> </a>
 		
 		
 		<?php
@@ -148,38 +136,14 @@ for($b=1;$b<=$a;$b++)
 
 
 
+<hr>
+<hr>
+
           <!-- this comment is for sending form request -->
-          <div class="card my-4">
-            <h5 class="card-header">Ask Your Question:</h5>
-            <div class="card-body">
-              <form action="insert.php" method="post">
-                <div class="form-group">
-                  <textarea class="form-control" rows="3" name="text"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </div>
+        
 
           <!-- Single Comment -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Your Answer Is Here.......</h5>
-           
-            </div>
-          </div>
- <div class="card my-4">
-            <h5 class="card-header">Solution:</h5>
-            <div class="card-body">
-              <form action="insert.php" method="post">
-                <div class="form-group">
-                  <textarea class="form-control" rows="3" name="text"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </div>
+ 
           <!-- Comment with nested comments -->
          
 
@@ -202,45 +166,28 @@ for($b=1;$b<=$a;$b++)
           </div>
 
           <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
+           <div class="card my-4">
+            <h5 class="card-header">Ask Your Question:</h5>
             <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Web Design</a>
-                    </li>
-                    <li>
-                      <a href="#">HTML</a>
-                    </li>
-                    <li>
-                      <a href="#">Freebies</a>
-                    </li>
-                  </ul>
+              <form action="insert.php" method="post">
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" name="text"></textarea>
                 </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">JavaScript</a>
-                    </li>
-                    <li>
-                      <a href="#">CSS</a>
-                    </li>
-                    <li>
-                      <a href="#">Tutorials</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
             </div>
           </div>
 
           <!-- Side Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
+       <div class="card my-4">
+            <h5 class="card-header">Solution:</h5>
             <div class="card-body">
-              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+              <form action="insert.php" method="post">
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" name="text"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
             </div>
           </div>
 
